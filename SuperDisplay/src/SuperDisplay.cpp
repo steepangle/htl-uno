@@ -112,3 +112,16 @@ void SuperDisplay::sayDuo(int n) {
 void SuperDisplay::sayMin(bool n) {
   digitalWrite(8, n ? LOW : HIGH);
 }
+
+void SuperDisplay::sayError() {
+  digitalWrite(0, HIGH);
+  digitalWrite(1, LOW);
+  digitalWrite(2, HIGH);
+  digitalWrite(3, HIGH);
+  digitalWrite(4, LOW);
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
+  digitalWrite(9, LOW);
+}

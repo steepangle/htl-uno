@@ -11,6 +11,7 @@ class SuperDisplay {
     void sayUno(int n);
     void sayDuo(int n);
     void sayMin(bool n);
+    void sayError();
   private:
     // Future internal variables can go here (e.g., pins, brightness, etc.)
 };
