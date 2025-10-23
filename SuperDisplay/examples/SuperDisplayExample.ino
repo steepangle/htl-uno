@@ -5,6 +5,10 @@ SuperDisplay superD;
 void setup() {
   superD.sayClear();
   delay(500);
+  superD.sayError();
+  delay(2000);
+  superD.sayClear();
+  delay(500);
 }
 
 void loop() {

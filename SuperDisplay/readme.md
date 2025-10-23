@@ -1,9 +1,32 @@
 # Super Display
 
- Library for displaying all sorts of values on HTL-UNOs HEX Display.
+ Library for displaying all sorts of values on HTL-UNO's HEX Display.
 
-## Segments
+## Segments & Pins
 
+![displayLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/displayLayout.png)
+
+*Physical layout of the segments on the board.*
+
+---
+
+### **PINS** segment
+|SEG|LED|PIN
+|---|---------|:---:|
+| a | V12 V13 | 0
+| b | V16 V19 | 1
+| c | V26 V29 | 2
+| d | V30 V31 | 3
+| e | V24 V27 | 4
+| f | V15 V18 | 5
+| g | V22 V23 | 6
+
+### **PINS** power
+|PIN |POWER TO|
+|----|--------|
+| 10 | HEX - Display  |
+| 11 | LED - Lightbar |
+| 12 | RGB - LED      |
 
 ## HowTo
 
@@ -19,13 +42,13 @@ superD.sayClear();      //turns off all segments
 superD.sayError();      //shows a state of error
 ```
 
-### First byte
+### First decimal
 ```cpp
 superD.Uno(n);          //sets the first byte to n
 ```
-All hex values are accepted (0-15) everything outside will show an error.
+All hex values are accepted (0-15) everything outside will show an error (segment ***a*** + ***b***).
 
-### Second byte
+### Second decimal
 ```cpp
 superD.Duo(n);          //sets the second byte to n
 ```

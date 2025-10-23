@@ -122,6 +122,6 @@ void SuperDisplay::sayError() {
   digitalWrite(5, HIGH);
   digitalWrite(6, HIGH);
   digitalWrite(7, HIGH);
-  digitalWrite(8, LOW);
+  digitalWrite(8, HIGH);
   digitalWrite(9, LOW);
 }
