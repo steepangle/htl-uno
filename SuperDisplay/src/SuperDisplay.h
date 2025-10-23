@@ -5,7 +5,7 @@
 
 class SuperDisplay {
   public:
-    SuperDisplay();          // Constructor
+    SuperDisplay();
 
     void sayClear();
     void sayUno(int n);
@@ -13,7 +13,6 @@ class SuperDisplay {
     void sayMin(bool n);
     void sayError();
   private:
-    // Future internal variables can go here (e.g., pins, brightness, etc.)
 };
 
 #endif
