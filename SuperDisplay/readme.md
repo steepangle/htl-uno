@@ -72,9 +72,6 @@ super.barEven(state);   //all even numbered LEDs
 
 *Physical layout of the segments on the board.*
 
----
-
-### Pins
 |SEG|LED|PIN
 |---|---------|:---:|
 | a | V12 V13 | 0
@@ -92,8 +89,6 @@ super.barEven(state);   //all even numbered LEDs
 ![lightbarLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/barLayout.png)
 
 *Layout on the board, rotated by 90° to the right.*
-
----
 
 |PIN| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 |---|---|---|---|---|---|---|---|---|---|---|
