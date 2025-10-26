@@ -12,7 +12,15 @@ class SuperDisplay {
     void sayDuo(int n);
     void sayMin(bool n);
     void sayError();
+
+    void barClear();
+    void barAll(bool state);
+    void barOdd(bool state);
+    void barEven(bool state);
+    void barSet(int n, bool state);
+
+    void rgbSet(bool r, bool g, bool b);
   private:
 };
 
-#endif
+#endif // fortnite<05

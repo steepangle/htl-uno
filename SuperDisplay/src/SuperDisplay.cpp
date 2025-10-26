@@ -1,30 +1,26 @@
 #include "SuperDisplay.h"
 
 SuperDisplay::SuperDisplay() {
-  // Initialize all digital pins as outputs (0–9 for values)
-  for (int i = 0; i <= 9; i++) {
+  for (int i = 0; i <= 12; i++) {
     pinMode(i, OUTPUT);
   }
-
-  // HEX Display select
-  pinMode(10, OUTPUT);
-  digitalWrite(10, LOW);
-
-  // LED Bar
-  pinMode(11, OUTPUT);
-  digitalWrite(11, HIGH);
-  // RGB LED
-  pinMode(12, OUTPUT);
-  digitalWrite(12, HIGH);
 }
 
 void SuperDisplay::sayClear() {
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
   for (int i = 0; i <= 9; i++) {
     digitalWrite(i, HIGH);
   }
 }
 
 void SuperDisplay::sayUno(int n) {
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
   switch (n) {
     case 0:  digitalWrite(0, LOW); digitalWrite(1, LOW); digitalWrite(2, LOW);
              digitalWrite(3, LOW); digitalWrite(4, LOW); digitalWrite(5, LOW);
@@ -97,6 +93,10 @@ void SuperDisplay::sayUno(int n) {
 }
 
 void SuperDisplay::sayDuo(int n) {
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
   if (n == 0) {
     digitalWrite(7, HIGH);
     digitalWrite(9, HIGH);
@@ -110,10 +110,18 @@ void SuperDisplay::sayDuo(int n) {
 }
 
 void SuperDisplay::sayMin(bool n) {
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
   digitalWrite(8, n ? LOW : HIGH);
 }
 
 void SuperDisplay::sayError() {
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, HIGH);
+
   digitalWrite(0, HIGH);
   digitalWrite(1, LOW);
   digitalWrite(2, HIGH);
@@ -124,4 +132,62 @@ void SuperDisplay::sayError() {
   digitalWrite(7, HIGH);
   digitalWrite(8, HIGH);
   digitalWrite(9, LOW);
+}
+
+void SuperDisplay::barClear() {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, HIGH);
+
+  for (int i = 0; i <= 9; i++) {
+    digitalWrite(i, HIGH);
+  }
+}
+
+void SuperDisplay::barAll(bool state) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, HIGH);
+
+  for (int i = 0; i <= 9; i++) {
+    digitalWrite(i, state ? LOW : HIGH);
+  }
+}
+
+void SuperDisplay::barSet(int n, bool state) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, HIGH);
+
+  digitalWrite(n, state ? LOW : HIGH);
+}
+
+void SuperDisplay::barOdd(bool state) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, HIGH);
+
+  for (int i = 1; i <= 9; i += 2) {
+    digitalWrite(i, state ? LOW : HIGH);
+  }
+}
+
+void SuperDisplay::barEven(bool state) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  digitalWrite(12, HIGH);
+
+  for (int i = 0; i <= 8; i += 2) {
+    digitalWrite(i, state ? LOW : HIGH);
+  }
+}
+
+void SuperDisplay::rgbSet(bool r, bool g, bool b) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, LOW);
+
+  digitalWrite(5, r ? LOW : HIGH);
+  digitalWrite(6, g ? LOW : HIGH);
+  digitalWrite(9, b ? LOW : HIGH);
 }
