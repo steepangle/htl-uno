@@ -68,11 +68,7 @@ super.barEven(state);   //all even numbered LEDs
 
 ## HEX Display
 
-![displayLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/displayLayout.png)
-
-*Physical layout of the segments on the board.*
-
-|SEG|LED|PIN
+|SEG|LED|PIN|
 |---|---------|:---:|
 | a | V12 V13 | 0
 | b | V16 V19 | 1
@@ -82,17 +78,19 @@ super.barEven(state);   //all even numbered LEDs
 | f | V15 V18 | 5
 | g | V22 V23 | 6
 
+![displayLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/displayLayout.png)
 
+*Physical layout of the segments on the board.*
 
 ## LED lightbar
-
-![lightbarLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/barLayout.png)
-
-*Layout on the board, rotated by 90° to the right.*
 
 |PIN| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 |---|---|---|---|---|---|---|---|---|---|---|
 |LED|V32|V33|V34|V35|V36|V37|V38|V39|V40|V41|
+
+![lightbarLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/barLayout.png)
+
+*Layout on the board, rotated by 90° to the right.*
 
 ## RGB LED
 
