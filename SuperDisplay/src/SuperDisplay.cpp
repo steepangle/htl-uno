@@ -182,7 +182,17 @@ void SuperDisplay::barEven(bool state) {
   }
 }
 
-void SuperDisplay::rgbSet(bool r, bool g, bool b) {
+void SuperDisplay::rgbClear() {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, LOW);
+
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(9, HIGH);
+}
+
+void SuperDisplay::rgbSetAll(bool r, bool g, bool b) {
   digitalWrite(10, HIGH);
   digitalWrite(11, HIGH);
   digitalWrite(12, LOW);
@@ -190,4 +200,64 @@ void SuperDisplay::rgbSet(bool r, bool g, bool b) {
   digitalWrite(5, r ? LOW : HIGH);
   digitalWrite(6, g ? LOW : HIGH);
   digitalWrite(9, b ? LOW : HIGH);
+}
+
+void SuperDisplay::rgbSetSingle(char led, bool state) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, LOW);
+
+  switch (led) {
+    case 'r':
+      digitalWrite(5, state ? LOW : HIGH);
+      break;
+    case 'g':
+      digitalWrite(6, state ? LOW : HIGH);
+      break;
+    case 'b':
+      digitalWrite(9, state ? LOW : HIGH);
+      break;
+    default:
+      break;
+  }
+}
+
+void SuperDisplay::rgbOn(char led) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, LOW);
+
+  switch (led) {
+    case 'r':
+      digitalWrite(5, LOW);
+      break;
+    case 'g':
+      digitalWrite(6, LOW);
+      break;
+    case 'b':
+      digitalWrite(9, LOW);
+      break;
+    default:
+      break;
+  }
+}
+
+void SuperDisplay::rgbOff(char led) {
+  digitalWrite(10, HIGH);
+  digitalWrite(11, HIGH);
+  digitalWrite(12, LOW);
+
+  switch (led) {
+    case 'r':
+      digitalWrite(5, HIGH);
+      break;
+    case 'g':
+      digitalWrite(6, HIGH);
+      break;
+    case 'b':
+      digitalWrite(9, HIGH);
+      break;
+    default:
+      break;
+  }
 }

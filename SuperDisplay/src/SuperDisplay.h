@@ -19,8 +19,12 @@ class SuperDisplay {
     void barEven(bool state);
     void barSet(int n, bool state);
 
-    void rgbSet(bool r, bool g, bool b);
+    void rgbClear();
+    void rgbSetAll(bool r, bool g, bool b);
+    void rgbSetSingle(char led, bool state);
+    void rgbOn(char led);
+    void rgbOff(char led);
   private:
 };
 
-#endif // fortnite<05
+#endif

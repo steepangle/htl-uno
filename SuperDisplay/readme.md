@@ -56,27 +56,60 @@ super.barOdd(state);    //all odd numbered LEDs
 super.barEven(state);   //all even numbered LEDs
 ```
 
+## RGB LED
+
+### Clear Operation
+```cpp
+super.rgbClear();       //all odd numbered LEDs
+```
+
+### On/Off Operation
+```cpp
+super.rgbOn(led);       //turns the selected LED On
+super.rgbOff(led);      //turns the selected LED Off
+```
+Values **r**, **g** and **b** are accepted for the **led** variable.
+
+### SetAll Operation
+```cpp
+super.rgbSetAll(r, g, b);           //sets all LEDs at once
+```
+|var|type     |description                    |
+|---|---------|-------------------------------|
+| r | boolean | controlls the **red** LED     |
+| g | boolean | controlls the **green** LED   |
+| b | boolean | controlls the **blue** LED    |
+
+### SetSingle Operation
+```cpp
+super.rgbSetSingle(led, state);     //sets just one LED
+```
+|var   |type     |description                                           |
+|------|---------|------------------------------------------------------|
+|led   | string  | selects the LED, either **r** **g** or **b**         |
+|state | boolean | sets the given LED to either **true** or **false**   |
+
 # The Whole Iceberg
 
 ### Power Pins
 
-|PIN |POWER TO|
-|----|--------|
+|PIN |POWER TO        |
+|----|----------------|
 | 10 | HEX - Display  |
 | 11 | LED - Lightbar |
 | 12 | RGB - LED      |
 
 ## HEX Display
 
-|SEG|LED|PIN|
-|---|---------|:---:|
-| a | V12 V13 | 0
-| b | V16 V19 | 1
-| c | V26 V29 | 2
-| d | V30 V31 | 3
-| e | V24 V27 | 4
-| f | V15 V18 | 5
-| g | V22 V23 | 6
+|SEG|LED      |PIN|
+|---|---------|:-:|
+| a | V12 V13 | 0 |
+| b | V16 V19 | 1 |
+| c | V26 V29 | 2 |
+| d | V30 V31 | 3 |
+| e | V24 V27 | 4 |
+| f | V15 V18 | 5 |
+| g | V22 V23 | 6 |
 
 ![displayLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/displayLayout.png)
 
@@ -94,8 +127,8 @@ super.barEven(state);   //all even numbered LEDs
 
 ## RGB LED
 
-|PIN|COLOR|LED|
-|---|-----|----|
-| 9 | BL | V43 |
-| 6 | GR | V43 |
-| 5 | RD | V43 |
+|PIN|COLOR|LED  |
+|---|-----|-----|
+| 9 | BL  | V43 |
+| 6 | GR  | V43 |
+| 5 | RD  | V43 |
