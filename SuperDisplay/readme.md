@@ -110,6 +110,11 @@ super.rgbSetSingle(led, state);     //sets just one LED
 | e | V24 V27 | 4 |
 | f | V15 V18 | 5 |
 | g | V22 V23 | 6 |
+|
+|aa | V14 V17 | 9 |
+|bb | V24 V27 | 7 |
+|
+| m | V20 V21 | 8 |
 
 ![displayLayout](https://raw.githubusercontent.com/steepangle/htl-uno/refs/heads/main/media/displayLayout.png)
 
